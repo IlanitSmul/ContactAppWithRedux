@@ -31,8 +31,12 @@ class ContactForm extends Component {
         e.target['name'].value = '';
         e.target['email'].value = '';
 
-        this.state.contact['name'] = '';
-        this.state.contact['email'] = '';
+        this.setState({
+            contact: {
+                name: '',
+                email: ''
+            }
+        })
     }
 
     render() {

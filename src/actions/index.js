@@ -1,10 +1,34 @@
 let nextContactId = 0
 export const addContactAction = (name, email) => ({
     type: 'ADD_CONTACT',
-    id: nextContactId++,
-    name,
-    email
+    payload: {
+        id: nextContactId++,
+        name,
+        email
+    }
 })
+
+export const addRandomContactAction = () => {
+    return async (dispatch) => {
+        fetch("https://randomuser.me/api/")
+            .then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                data = data.results[0];
+                return dispatch({
+                    type: "ADD_RANDOM_CONTACT",
+                    payload: {
+                        id: nextContactId++,
+                        name: `${data.name.first} ${data.name.last}`,
+                        // phone: data.phone,
+                        email: data.email,
+                        // address: `${data.location.city}, ${data.location.country}`,
+                    },
+                });
+            });
+    }
+}
+
 
 export const setVisibilityFilter = filter => ({
     type: 'SET_VISIBILITY_FILTER',
