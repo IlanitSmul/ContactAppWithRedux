@@ -25,16 +25,10 @@ class LimitContractListSize extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        contacts: state.contacts
-    }
-};
-
 const mapDispatchToProps = disaptch => {
     return {
         setLimit: (limit) => { disaptch(setLimitAction(limit)); },
         clearLimit: () => { disaptch(clearLimitAction()); },
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LimitContractListSize);
+export default connect(null, mapDispatchToProps)(LimitContractListSize);

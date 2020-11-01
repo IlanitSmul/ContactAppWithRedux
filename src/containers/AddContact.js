@@ -14,7 +14,7 @@ class AddContact extends Component {
         let renderedForm = <p className="message">
             Unable to add new contact.<br />
             Please delete one of ypur contacts or increase the limit.</p>;
-        if (this.props.contacts.canAdd) {
+        if (this.props.canAdd) {
             renderedForm = <ContactForm handlerAddContact={this.handlerAdddContact} />;
         }
 
@@ -29,7 +29,7 @@ class AddContact extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts
+        canAdd: state.contacts.canAdd
     }
 };
 

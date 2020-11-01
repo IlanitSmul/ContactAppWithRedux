@@ -9,7 +9,7 @@ class AddRandomContact extends Component {
         let renderedButton = <p className="message">
             Unable to add new contact.<br />
             Please delete one of ypur contacts or increase the limit.</p>;
-        if (this.props.contacts.canAdd) {
+        if (this.props.canAdd) {
             renderedButton = <button type="submit" className="btn btn-primary mt-2 mb-3 px-3" onClick={this.props.addRandomContact}>Add New Random Contact</button>;
         }
 
@@ -24,7 +24,7 @@ class AddRandomContact extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts
+        canAdd: state.contacts.canAdd
     }
 };
 

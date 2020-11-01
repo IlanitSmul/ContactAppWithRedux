@@ -7,15 +7,15 @@ class ContactList extends Component {
 
     render() {
 
-        let limitText = (this.props.contacts.limit < 0) ? 'undefine' : this.props.contacts.limit;
+        let limitText = (this.props.limit < 0) ? 'undefine' : this.props.limit;
 
         let renderedList = <div id="list" className="row row-cols-2 card-deck">
-            {this.props.contacts.contactsArr.map((contact, index) =>
+            {this.props.contactsArr.map((contact, index) =>
                 <Contact key={contact.id} index={index} contact={contact} onClick={() => this.props.deleteContact(contact.id)} />
             )}
         </div>
 
-        if (this.props.contacts.contactsArr.length === 0) {
+        if (this.props.contactsArr.length === 0) {
             renderedList = <p className="message mb-3 py-1 pl-3 mr-2">You have no contacts</p>
         }
 
@@ -31,7 +31,8 @@ class ContactList extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts
+        contactsArr: state.contacts.contactsArr,
+        limit: state.contacts.limit,
     }
 };
 
