@@ -5,7 +5,7 @@
 #### Technologies:
 * **Front-end**: React, Redux.
 
-#### Screenshot:
+#### Screenshots:
 * Without redux debugging mode:
 
 ![image](https://user-images.githubusercontent.com/37686204/97818269-41452280-1caa-11eb-8c9a-231d12ce4a02.png)
