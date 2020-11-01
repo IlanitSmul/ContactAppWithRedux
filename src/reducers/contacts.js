@@ -1,12 +1,13 @@
 const contacts = (state = [], action) => {
     switch (action.type) {
         case 'ADD_CONTACT':
+            console.log(action)
             return [
                 ...state,
                 {
                     id: action.id,
-                    text: action.text,
-                    completed: false
+                    name: action.name,
+                    email: action.email,
                 }
             ]
 

@@ -1,13 +1,10 @@
 import React from 'react'
 
-const Contact = ({ onClick, completed, text }) => (
+const Contact = ({ onClick, name, email }) => (
     <li
         onClick={onClick}
-        style={{
-            textDecoration: completed ? 'line-through' : 'none'
-        }}
     >
-        {text}
+        <p>name: {name}, email: {email} </p>
     </li>
 )
 

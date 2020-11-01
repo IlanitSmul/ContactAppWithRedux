@@ -1,8 +1,9 @@
 let nextContactId = 0
-export const addContact = text => ({
+export const addContactAction = (name, email) => ({
     type: 'ADD_CONTACT',
     id: nextContactId++,
-    text
+    name,
+    email
 })
 
 export const setVisibilityFilter = filter => ({
