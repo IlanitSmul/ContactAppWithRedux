@@ -85,7 +85,8 @@ form i {
 }
 
 .bright-section h2, .dark-section h2,
-.bright-section p, .dark-section p ,
+.bright-section p, .dark-section p,
+.bright-section div, .dark-section div,
 .bright-section .form-group, .dark-section .form-group {
 	text-align: left;
 }

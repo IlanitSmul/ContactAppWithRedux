@@ -16,19 +16,19 @@ class AddContact extends Component {
         if (this.props.debugRedux) {
             renderedReduxDebuggin =
                 <div>
-                    <p className="redux-debugging-store py-1 px-2 my-0">
+                    <div className="redux-debugging-store py-1 px-2 my-0">
                         <span className="bolder">STORE:</span>
                         <ul className="m-0">
                             <li><span className="bolder">contacts.canAdd: </span>{(this.props.canAdd.toString())}</li>
                             <li><span className="bolder">contacts.debugRedux: </span>{(this.props.debugRedux.toString())}</li>
                         </ul>
-                    </p>
-                    <p className="redux-debugging-action py-1 px-2 my-0">
+                    </div>
+                    <div className="redux-debugging-action py-1 px-2 my-0">
                         <span className="bolder">ACTIONS:</span>
                         <ul className="m-0">
                             <li><span className="bolder">addContact(contact)</span></li>
                         </ul>
-                    </p>
+                    </div>
                 </div>
         }
 
