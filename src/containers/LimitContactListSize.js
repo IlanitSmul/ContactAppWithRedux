@@ -25,7 +25,7 @@ class LimitContractListSize extends Component {
     }
 }
 
-const mapStateToProps = state => { // todo:delete
+const mapStateToProps = state => {
     return {
         contacts: state.contacts
     }

@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionsTypes';
 
 const initialState = {
-    contacts: [],
+    contactsArr: [],
     limit: -1,
     canAdd: true
 };
@@ -37,17 +37,17 @@ const updateObject = (oldObject, updatedValues) => {
 };
 
 const deleteContactUtil = (state, action) => {
-    const updatedArray = state.contacts.filter(contact => contact.id !== action.payload.id);
+    const updatedArray = state.contactsArr.filter(contact => contact.id !== action.payload.id);
     return updateObject(state,
         {
-            contacts: updatedArray,
+            contactsArr: updatedArray,
             canAdd: checkIfCanAddContact(updatedArray, state.limit),
         });
 };
 
 const addContactUtil = (state, action) => {
     console.log(action)
-    const updatedArray = state.contacts.concat({
+    const updatedArray = state.contactsArr.concat({
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
@@ -57,16 +57,16 @@ const addContactUtil = (state, action) => {
 
     return updateObject(state,
         {
-            contacts: updatedArray,
+            contactsArr: updatedArray,
             canAdd: checkIfCanAddContact(updatedArray, state.limit),
         });
 };
 
 const limitContactListUtil = (state, action) => {
-    const updatedArray = state.contacts.filter((contact, index) => index < action.payload.limit);
+    const updatedArray = state.contactsArr.filter((contact, index) => index < action.payload.limit);
     return updateObject(state,
         {
-            contacts: updatedArray,
+            contactsArr: updatedArray,
             limit: action.payload.limit,
             canAdd: checkIfCanAddContact(updatedArray, action.payload.limit),
 
