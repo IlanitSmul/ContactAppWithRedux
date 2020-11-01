@@ -1,11 +1,11 @@
 import React from 'react'
 import AddContact from '../containers/AddContact'
-import VisibleContactList from '../containers/VisibleContactList'
+import ContactList from '../containers/ContactList'
 
 const App = () => (
     <div>
         <AddContact />
-        <VisibleContactList />
+        <ContactList />
     </div>
 )
 
