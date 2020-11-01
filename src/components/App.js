@@ -3,14 +3,24 @@ import AddContact from '../containers/AddContact'
 import AddRandomContact from '../containers/AddRandomContact'
 import ContactList from '../containers/ContactList'
 import LimitContactListSize from '../containers/LimitContactListSize'
+import ReduxDebugger from '../containers/ReduxDebugger'
 
 import './App.css';
 
 const App = () => (
     <div className="container">
 
-        <div className="header my-4">
-            <h1>Contact <span>list</span></h1>
+        <div className="row">
+
+            <div className="header my-4 col-3 p-0 m-0">
+                <ReduxDebugger />
+            </div>
+            <div className="header my-4 col-6 p-0 m-0">
+                <h1>Contact <span>list</span></h1>
+            </div>
+            <div className="header my-4 col-3 p-0 m-0">
+            </div>
+
         </div>
 
         <div className="row">

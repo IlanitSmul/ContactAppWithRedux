@@ -4,7 +4,7 @@ const initialState = {
     contactsArr: [],
     limit: -1,
     canAdd: true,
-    debugRedux: true
+    debugRedux: false
 };
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -20,6 +20,11 @@ const reducer = (state = initialState, action) => {
             return limitContactListUtil(state, action);
         case actionTypes.CLEAR_LIMIT:
             return updateObject(state, { limit: -1, canAdd: true });
+
+        case actionTypes.DISABLE_REDUX_DEBUGGER:
+            return updateObject(state, { debugRedux: false });
+        case actionTypes.ENABLE_REDUX_DEBUGGER:
+            return updateObject(state, { debugRedux: true });
 
         default:
             return state
