@@ -20,6 +20,18 @@ button {
 	color: black;
 }
 
+.redux-debugging-store {
+	background-color: #cddc39;
+	color: black;
+}
+.redux-debugging-action {
+	background-color: #8bc34a;
+	color: black;
+}
+.redux-debugging-store *, .redux-debugging-action * {
+	color: black;
+}
+
 i {
 	color: #3681dd;
 }

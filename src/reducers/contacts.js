@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionsTypes';
 const initialState = {
     contactsArr: [],
     limit: -1,
-    canAdd: true
+    canAdd: true,
+    debugRedux: true
 };
 const reducer = (state = initialState, action) => {
     switch (action.type) {

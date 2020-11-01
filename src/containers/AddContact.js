@@ -11,7 +11,28 @@ class AddContact extends Component {
 
     render() {
 
-        let renderedForm = <p className="message">
+        // redux debugging
+        let renderedReduxDebuggin = ''
+        if (this.props.debugRedux) {
+            renderedReduxDebuggin =
+                <div>
+                    <p className="redux-debugging-store py-1 px-2 my-0">
+                        <span className="bolder">STORE:</span>
+                        <ul className="m-0">
+                            <li><span className="bolder">contacts.canAdd: </span>{(this.props.canAdd.toString())}</li>
+                            <li><span className="bolder">contacts.debugRedux: </span>{(this.props.debugRedux.toString())}</li>
+                        </ul>
+                    </p>
+                    <p className="redux-debugging-action py-1 px-2 my-0">
+                        <span className="bolder">ACTIONS:</span>
+                        <ul className="m-0">
+                            <li><span className="bolder">addContact(contact)</span></li>
+                        </ul>
+                    </p>
+                </div>
+        }
+
+        let renderedForm = <p className="message py-1 px-2">
             Unable to add new contact.<br />
             Please delete one of ypur contacts or increase the limit.</p>;
         if (this.props.canAdd) {
@@ -22,6 +43,7 @@ class AddContact extends Component {
             <div className="bright-section mr-2 mb-3 px-3 py-2">
                 <h2 className="pt-2 pb-2">Create Contact</h2 >
                 {renderedForm}
+                {renderedReduxDebuggin}
             </div >
         )
     }
@@ -29,7 +51,8 @@ class AddContact extends Component {
 
 const mapStateToProps = state => {
     return {
-        canAdd: state.contacts.canAdd
+        canAdd: state.contacts.canAdd,
+        debugRedux: state.contacts.debugRedux
     }
 };
 

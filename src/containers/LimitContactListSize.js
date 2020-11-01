@@ -10,6 +10,28 @@ class LimitContractListSize extends Component {
     }
 
     render() {
+
+        // redux debugging
+        let renderedReduxDebuggin = ''
+        if (this.props.debugRedux) {
+            renderedReduxDebuggin =
+                <div>
+                    <p className="redux-debugging-store py-1 px-2 my-0">
+                        <span className="bolder">STORE:</span>
+                        <ul className="m-0">
+                            <li><span className="bolder">contacts.debugRedux: </span>{(this.props.debugRedux.toString())}</li>
+                        </ul>
+                    </p>
+                    <p className="redux-debugging-action py-1 px-2 my-0">
+                        <span className="bolder">ACTIONS:</span>
+                        <ul className="m-0">
+                            <li><span className="bolder">setLimit(limit)</span></li>
+                            <li><span className="bolder">clearLimit()</span></li>
+                        </ul>
+                    </p>
+                </div>
+        }
+
         return (
             <div className="dark-section mr-2 mb-3 px-3 py-2">
 
@@ -20,10 +42,18 @@ class LimitContractListSize extends Component {
 
                 <button type="submit" className="btn btn-primary mt-3 mb-2" onClick={this.props.clearLimit}>Remove Limit</button>
 
+                {renderedReduxDebuggin}
+
             </div >
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        debugRedux: state.contacts.debugRedux
+    }
+};
 
 const mapDispatchToProps = disaptch => {
     return {
@@ -31,4 +61,4 @@ const mapDispatchToProps = disaptch => {
         clearLimit: () => { disaptch(clearLimitAction()); },
     }
 }
-export default connect(null, mapDispatchToProps)(LimitContractListSize);
+export default connect(mapStateToProps, mapDispatchToProps)(LimitContractListSize);
