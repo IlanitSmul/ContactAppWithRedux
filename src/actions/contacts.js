@@ -14,9 +14,9 @@ export const addRandomContactAction = () => {
                     payload: {
                         id: nextContactId++,
                         name: `${data.name.first} ${data.name.last}`,
-                        // phone: data.phone,
+                        phone: data.phone,
                         email: data.email,
-                        // address: `${data.location.city}, ${data.location.country}`,
+                        address: `${data.location.city}, ${data.location.country}`,
                     },
                 });
             });

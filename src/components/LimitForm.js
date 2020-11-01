@@ -36,14 +36,18 @@ class LimitForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handlerSubmit} >
-                    <input type="number" value={this.state.limit}
-                        onChange={(e) => this.handlerChangeContact(e.target.value)}
-                        className="form-control" id="limit" placeholder="Enter limit" />
-                    <button type="submit" className="btn btn-primary">Set Limit</button>
+                    <div className="row">
+                        <div className="col-9">
+                            <input type="number" value={this.state.limit}
+                                onChange={(e) => this.handlerChangeContact(e.target.value)}
+                                className="form-control" id="limit" placeholder="Enter limit" />
+                        </div>
+                        <div className="col-3 px-0">
+                            <button type="submit" className="btn btn-primary">Set Limit</button>
+                        </div>
+                    </div>
                 </form>
-                <p>this will delete contacts that pass the limit</p>
             </div>
-
         )
     }
 }

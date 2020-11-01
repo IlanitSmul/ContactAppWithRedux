@@ -9,24 +9,25 @@ class AddContact extends Component {
         this.props.addContact(name, email);
     }
 
-
     render() {
 
-        let form = <p>can't add</p>;
+        let renderedForm = <p className="message">
+            Unable to add new contact.<br />
+            Please delete one of ypur contacts or increase the limit.</p>;
         if (this.props.contacts.canAdd) {
-            form = <ContactForm handlerAddContact={this.handlerAdddContact} />;
+            renderedForm = <ContactForm handlerAddContact={this.handlerAdddContact} />;
         }
 
         return (
-            <div>
-                {form}
-                {/* <ContactForm handlerAddContact={this.handlerAdddContact} /> */}
-            </div>
+            <div className="bright-section mr-2 mb-3 px-3 py-2">
+                <h2 className="pt-2 pb-2">Create Contact</h2 >
+                {renderedForm}
+            </div >
         )
     }
 }
 
-const mapStateToProps = state => { // todo:delete
+const mapStateToProps = state => {
     return {
         contacts: state.contacts
     }

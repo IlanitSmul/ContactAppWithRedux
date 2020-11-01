@@ -6,19 +6,32 @@ import Contact from '../components/Contact'
 class ContactList extends Component {
 
     render() {
+
+        let limitText = (this.props.contacts.limit < 0) ? 'undefine' : this.props.contacts.limit;
+
+        let renderedList = <div id="list" className="row row-cols-2 card-deck">
+            {this.props.contacts.contacts.map((contact, index) =>
+                <Contact key={contact.id} index={index} {...contact} onClick={() => this.props.deleteContact(contact.id)} />
+            )}
+        </div>
+
+        if (this.props.contacts.contacts.length === 0) {
+            renderedList = <p className="message mb-3 py-1 pl-3 mr-2">You have no contacts</p>
+        }
+
         return (
-            <ul>
-                {this.props.contacts.map(contact =>
-                    <Contact key={contact.id} {...contact} onClick={() => this.props.deleteContact(contact.id)} />
-                )}
-            </ul>
+            <div className="middle-bright-section ml-2 px-3 py-2">
+                <h2 className="pt-2 pb-2">Your Contacts <span className="smaller">(limit={limitText})</span></h2>
+                {renderedList}
+            </div>
+
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts.contacts
+        contacts: state.contacts
     }
 };
 

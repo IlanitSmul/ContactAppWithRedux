@@ -1,0 +1,25 @@
+/* ----------------------------------------------------- */
+/* list-section                                        */
+/* ----------------------------------------------------- */
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-title span {
+    color: #ffcc00;
+}
+
+.delete-contact-btn {
+	color: white;
+	background-color: #44a2e7;
+	border: unset;
+}
+
+.card-body .card-title, .card-body .card-text {
+	text-align: left;
+}
+
+.card-body {
+	text-align: center;
+}

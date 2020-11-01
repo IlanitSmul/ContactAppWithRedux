@@ -1,5 +1,122 @@
+/* ----------------------------------------------------- */
+/* general                                               */
+/* ----------------------------------------------------- */
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	background: #eaeff3;
+}
+
+h2 {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+button {
+    border-color: unset;
+}
+
+.error-message, .message {
+	background-color: #f2d253;
+	color: black;
+}
+
+i {
+	color: #3681dd;
+}
+
+.smaller {
+	font-size: smaller;
+}
+
+.bolder {
+	font-weight: bold;
+}
+
+
+/* ----------------------------------------------------- */
+/* forms                                                 */
+/* ----------------------------------------------------- */
+
+form {
+    text-align: center;
+}
+form .form-group {
+	text-align: left;
+}
+
+form .form-group input {
+	background-color: #95cdf6;
+}
+
+form .btn, .btn {
+	color: white;
+	background-color: #307cdd;
+	border: unset;
+}
+
+form i {
+	color: #0c5284;
+}
+
+
+/* ----------------------------------------------------- */
+/* section                                        */
+/* ----------------------------------------------------- */
+
+.bright-section, .dark-section {
+	text-align: center;
+}
+
+.bright-section h2, .dark-section h2,
+.bright-section p, .dark-section p ,
+.bright-section .form-group, .dark-section .form-group {
+	text-align: left;
+}
+
+/* ----------------------------------------------------- */
+/* bright-section                                        */
+/* ----------------------------------------------------- */
+
+.bright-section {
+	background: #d9e6ef;
+}
+
+/* ----------------------------------------------------- */
+/* middle-bright-section                                 */
+/* ----------------------------------------------------- */
+
+.middle-bright-section {
+	background: #618aa8;
+}
+
+.middle-bright-section h2 {
+	color: white;
+}
+
+/* ----------------------------------------------------- */
+/* dark-section                                          */
+/* ----------------------------------------------------- */
+
+.dark-section  {
+	background: #1074bc;
+}
+
+.dark-section h2, .dark-section p {
+	color: white;
+}
+
+.dark-section input {
+	background-color: #0c5284;
+	color: white;
+	border: unset;
+}
+.dark-section input::placeholder{
+	color: white;
+	opacity: 1;
+}
+
+.dark-section .btn {
+	color: white;
+	background-color: #44a2e7;
+	border: unset;
 }
