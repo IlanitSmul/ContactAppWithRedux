@@ -19,7 +19,8 @@ export const addRandomContactAction = () => {
                         address: `${data.location.city}, ${data.location.country}`,
                     },
                 });
-            });
+            }).catch(error => console.log('Error: ' + error.message));
+        ;
     }
 }
 

@@ -52,7 +52,6 @@ const deleteContactUtil = (state, action) => {
 };
 
 const addContactUtil = (state, action) => {
-    console.log(action)
     const updatedArray = state.contactsArr.concat({
         id: action.payload.id,
         name: action.payload.name,
