@@ -46,10 +46,13 @@ const deleteContactUtil = (state, action) => {
 };
 
 const addContactUtil = (state, action) => {
+    console.log(action)
     const updatedArray = state.contacts.concat({
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
+        phone: action.payload.phone,
+        address: action.payload.address,
     })
 
     return updateObject(state,

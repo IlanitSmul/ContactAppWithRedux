@@ -5,8 +5,8 @@ import ContactForm from '../components/ContactForm';
 
 class AddContact extends Component {
 
-    handlerAdddContact = (name, email) => {
-        this.props.addContact(name, email);
+    handlerAdddContact = (contact) => {
+        this.props.addContact(contact);
     }
 
     render() {
@@ -35,7 +35,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = disaptch => {
     return {
-        addContact: (name, email) => { disaptch(addContactAction(name, email)); }
+        addContact: (contact) => { disaptch(addContactAction(contact)); }
     }
 }
 

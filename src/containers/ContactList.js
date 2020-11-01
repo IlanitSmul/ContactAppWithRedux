@@ -11,7 +11,7 @@ class ContactList extends Component {
 
         let renderedList = <div id="list" className="row row-cols-2 card-deck">
             {this.props.contacts.contacts.map((contact, index) =>
-                <Contact key={contact.id} index={index} {...contact} onClick={() => this.props.deleteContact(contact.id)} />
+                <Contact key={contact.id} index={index} contact={contact} onClick={() => this.props.deleteContact(contact.id)} />
             )}
         </div>
 

@@ -7,7 +7,9 @@ class ContactForm extends Component {
         this.state = {
             contact: {
                 name: '',
-                email: ''
+                email: '',
+                phone: '',
+                address: '',
             }
         }
     }
@@ -27,15 +29,19 @@ class ContactForm extends Component {
             return
         }
 
-        this.props.handlerAddContact(this.state.contact.name, this.state.contact.email);
+        this.props.handlerAddContact(this.state.contact);
 
         e.target['name'].value = '';
         e.target['email'].value = '';
+        e.target['phone'].value = '';
+        e.target['address'].value = '';
 
         this.setState({
             contact: {
                 name: '',
-                email: ''
+                email: '',
+                phone: '',
+                address: '',
             }
         })
     }
@@ -57,6 +63,22 @@ class ContactForm extends Component {
                     <input type="email" className="form-control col-9" id="email" name="email"
                         value={this.state.contact.email}
                         onChange={(e) => this.handlerChangeContact('email', e.target.value)} />
+                </div>
+
+                <div className="form-group row pr-3">
+                    <label htmlFor="phone" className="col-form-label col-3">
+                        <i className="fas fa-phone-alt pr-2"></i>Phone</label>
+                    <input type="text" className="form-control col-9" id="phone" name="phone"
+                        value={this.state.contact.phone}
+                        onChange={(e) => this.handlerChangeContact('phone', e.target.value)} />
+                </div>
+
+                <div className="form-group row pr-3">
+                    <label htmlFor="address" className="col-form-label col-3">
+                        <i className="fas fa-map-marker-alt pr-2"></i>Address</label>
+                    <input type="text" className="form-control col-9" id="address" name="address"
+                        value={this.state.contact.address}
+                        onChange={(e) => this.handlerChangeContact('address', e.target.value)} />
                 </div>
 
                 <button type="submit" className="btn btn-primary mt-2 mb-3 px-3">Add New Contact</button>

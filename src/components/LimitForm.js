@@ -40,7 +40,7 @@ class LimitForm extends Component {
                         <div className="col-9">
                             <input type="number" value={this.state.limit}
                                 onChange={(e) => this.handlerChangeContact(e.target.value)}
-                                className="form-control" id="limit" placeholder="Enter limit" />
+                                className="form-control" id="limit" placeholder="Enter limit" min="0" required />
                         </div>
                         <div className="col-3 px-0">
                             <button type="submit" className="btn btn-primary">Set Limit</button>

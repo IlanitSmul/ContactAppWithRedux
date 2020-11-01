@@ -23,12 +23,11 @@ export const addRandomContactAction = () => {
     }
 }
 
-export const addContactAction = (name, email) => ({
+export const addContactAction = (contact) => ({
     type: actionTypes.ADD_CONTACT,
     payload: {
         id: nextContactId++,
-        name,
-        email
+        ...contact
     }
 })
 
