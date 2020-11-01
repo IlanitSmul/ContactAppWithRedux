@@ -11,7 +11,7 @@ class AddContact extends Component {
 
     render() {
         return (
-            <div className="add-contact">
+            <div>
                 <ContactForm handlerAddContact={this.handlerAdddContact} />
             </div>
         )
@@ -20,9 +20,7 @@ class AddContact extends Component {
 
 const mapDispatchToProps = disaptch => {
     return {
-        addContact: (name, email) => {
-            disaptch(addContactAction(name, email));
-        }
+        addContact: (name, email) => { disaptch(addContactAction(name, email)); }
     }
 }
 

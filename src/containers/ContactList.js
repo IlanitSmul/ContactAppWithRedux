@@ -16,15 +16,16 @@ class ContactList extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    contacts: state.contacts
-})
+const mapStateToProps = state => {
+    return {
+        contacts: state.contacts.contacts
+    }
+};
 
-const mapDispatchToProps = dispatch => ({
-    deleteContact: id => dispatch(deleteContact(id))
-})
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteContact: id => dispatch(deleteContact(id))
+    }
+};
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ContactList)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList)

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ContactForm extends Component {
     constructor(props) {
-        super();
+        super(props);
 
         this.state = {
             contact: {
@@ -11,6 +11,7 @@ class ContactForm extends Component {
             }
         }
     }
+
     handlerChangeContact = (property, value) => {
         let contact = this.state.contact;
         contact[property] = value;
@@ -59,6 +60,5 @@ class ContactForm extends Component {
         )
     }
 }
-
 
 export default ContactForm;
