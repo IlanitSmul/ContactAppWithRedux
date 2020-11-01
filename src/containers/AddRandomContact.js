@@ -5,13 +5,26 @@ import { addRandomContactAction } from '../actions'
 class AddRandomContact extends Component {
 
     render() {
+
+        let form = <p>can't add</p>;
+        if (this.props.contacts.canAdd) {
+            form = <button type="submit" className="btn btn-primary" onClick={this.props.addRandomContact}>Add Random Contact</button>
+                ;
+        }
+
         return (
             <div>
-                <button type="submit" className="btn btn-primary" onClick={this.props.addRandomContact}>Add Random Contact</button>
+                {form}
             </div>
         )
     }
 }
+
+const mapStateToProps = state => { // todo:delete
+    return {
+        contacts: state.contacts
+    }
+};
 
 const mapDispatchToProps = disaptch => {
     return {
@@ -19,4 +32,4 @@ const mapDispatchToProps = disaptch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddRandomContact);
+export default connect(mapStateToProps, mapDispatchToProps)(AddRandomContact);

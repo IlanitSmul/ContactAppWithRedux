@@ -9,14 +9,28 @@ class AddContact extends Component {
         this.props.addContact(name, email);
     }
 
+
     render() {
+
+        let form = <p>can't add</p>;
+        if (this.props.contacts.canAdd) {
+            form = <ContactForm handlerAddContact={this.handlerAdddContact} />;
+        }
+
         return (
             <div>
-                <ContactForm handlerAddContact={this.handlerAdddContact} />
+                {form}
+                {/* <ContactForm handlerAddContact={this.handlerAdddContact} /> */}
             </div>
         )
     }
 }
+
+const mapStateToProps = state => { // todo:delete
+    return {
+        contacts: state.contacts
+    }
+};
 
 const mapDispatchToProps = disaptch => {
     return {
@@ -24,4 +38,4 @@ const mapDispatchToProps = disaptch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddContact);
+export default connect(mapStateToProps, mapDispatchToProps)(AddContact);

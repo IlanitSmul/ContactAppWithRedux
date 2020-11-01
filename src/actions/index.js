@@ -1,5 +1,9 @@
 export {
     addRandomContactAction,
     addContactAction,
-    deleteContact
+    deleteContact,
 } from './contacts';
+export {
+    setLimitAction,
+    clearLimitAction,
+} from './limit';
